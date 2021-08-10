@@ -5,8 +5,8 @@ var result = require("../controller/errResulUtils");
 //var Token = require("../controller/token");
 var initializer = {};
 
-//ar blockchainAddress = "ws://host.docker.internal:7545";
-var blockchainAddress = "127.0.0.1:8545";
+//var blockchainAddress = "ws://host.docker.internal:7545";
+var blockchainAddress = "ws://host.docker.internal:8545";
 
 
 function timeStamp(){
