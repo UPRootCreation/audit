@@ -5,7 +5,9 @@ var result = require("../controller/errResulUtils");
 //var Token = require("../controller/token");
 var initializer = {};
 
-var blockchainAddress = "ws://host.docker.internal:7545";
+//ar blockchainAddress = "ws://host.docker.internal:7545";
+var blockchainAddress = "127.0.0.1:8545";
+
 
 function timeStamp(){
 	var today = new Date();
@@ -85,7 +87,7 @@ function createSC(req,fn){
 	     }).on('error', function(error, receipt) {
 	     		console.log(error);
 				receiptG = "error";
-				fn(receiptG);	    		
+				fn(receiptG);
 	     	});
 	}catch(err){
 		resultado = 60;
@@ -104,7 +106,7 @@ function createRootSC(req,fn){
 	byteCodeRoot = contracts.userSol.User.evm.bytecode.object; //it depends of the Contract name
 
 	sA = req.body.S;
-	tA = req.body.T;  
+	tA = req.body.T;
 	keyR = req.body.keyR;
 	data = req.body.data; //obtaining public key account
 	tuA = req.body.Tu;
@@ -134,7 +136,7 @@ function createRootSC(req,fn){
 	     }).on('error', function(error, receipt) {
 	     		console.log(error);
 				receiptG = "error";
-				fn(receiptG);	    		
+				fn(receiptG);
 	     	});
 	}catch(err){
 		resultado = 60;
@@ -159,8 +161,8 @@ initializer.findLog=function(req,fn){
 	userContract = new web3.eth.Contract(avoContract,addCon);
 	// Working pero regresa todos los logs
 	var allEvents=[];
-	userContract.getPastEvents('Bitacora',{fromBlock: 0, toBlock:'latest'}, function(error, listEvents){ 
-			console.log(listEvents); 
+	userContract.getPastEvents('Bitacora',{fromBlock: 0, toBlock:'latest'}, function(error, listEvents){
+			console.log(listEvents);
 			allEvents = listEvents;
 			var entro = false;
 			allEvents.forEach(logs => {
@@ -173,7 +175,7 @@ initializer.findLog=function(req,fn){
 					};
 					fn(resul);
 					//break;
-				}	
+				}
 			});
 			if(!entro){
 				console.log("Log not found");
@@ -244,7 +246,7 @@ function addingEventSC(req,fn){
 	var addCon  = req.body.Asc;
 	var typeEvent = req.body.typeEvent;
 	var source = 	req.body.source;
-	var target = 	req.body.target;	
+	var target = 	req.body.target;
 	var token = 	req.body.token;
 	var eventDescription = 	req.body.eventDescription;
 	var key = req.body.key;
@@ -268,7 +270,7 @@ function addingEventSC(req,fn){
 	     	}).on('error', function(error, receipt) {
 	     		console.log(error);
 				receiptG = "error";
-				fn(receiptG);	    		
+				fn(receiptG);
 	     	});
 	}catch(err){
 		console.log(err);
@@ -310,7 +312,7 @@ function addingAccountSC(req,fn){
 	     	}).on('error', function(error, receipt) {
 	     		console.log(error);
 				receiptG = "error";
-				fn(receiptG);	    		
+				fn(receiptG);
 	     	});
 	}catch(err){
 		console.log(err);
