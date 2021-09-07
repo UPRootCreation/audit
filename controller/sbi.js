@@ -102,7 +102,6 @@ function createSC(req,fn){
 //save root in the smart contract
 function createRootSC(req,fn){
 	console.log("OK");
-	console.log(req.body);
 	var receiptG;
 	contracts = getContractObject('UserEvents.sol');
 	avoContract = contracts.userSol.User.abi; //it depends of the Contract name
