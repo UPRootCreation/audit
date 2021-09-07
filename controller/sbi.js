@@ -6,7 +6,7 @@ var result = require("../controller/errResulUtils");
 var initializer = {};
 
 //var blockchainAddress = "ws://host.docker.internal:7545";
-var blockchainAddress = "ws://host.docker.internal:8545";
+//var blockchainAddress = "ws://host.docker.internal:8545";
 var blockchainAddress = "ws://172.18.1.13:8545";
 
 
