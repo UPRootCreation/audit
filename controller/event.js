@@ -44,7 +44,8 @@ initializer.createRoot = function (req, res){
 							keyR:keyR,
 							data:data,
 							Tu:Tu,
-							To:To
+							To:To,
+							gas: gas
 						}
 			};
 			sbi.deploy(obj,function(resul){
@@ -71,7 +72,8 @@ initializer.createUser = function (req, res){
 							data:data,
 							Tu:Tu,
 							Nu:Nu,
-							To:To
+							To:To,
+							gas: gas
 						}
 			};
 			sbi.deployUser(obj,function(resul){
