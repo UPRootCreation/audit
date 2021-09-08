@@ -113,12 +113,14 @@ function createRootSC(req,fn){
 	data = req.body.data; //obtaining public key account
 	tuA = req.body.Tu;
 	toA = req.body.To;
+	gas = req.body.gas;
+
 	var resultado = 0;
 	try{
 		var Web3 = require('web3');
 		var web3 = new Web3(Web3.givenProvider || blockchainAddress);
 		userContract = new web3.eth.Contract(avoContract);
-    	userContract.deploy({data: byteCodeRoot, arguments: [keyR, tuA,sA,tA,toA,data]}).send({from: keyR, gas: 4700000
+    	userContract.deploy({data: byteCodeRoot, arguments: [keyR, tuA,sA,tA,toA,data]}).send({from: keyR, gas: gas
 	    	}, function(err, transactionHash){
 	    		if(err){
 	    			console.log("Entré pero hay error");

@@ -30,6 +30,7 @@ initializer.createUser = function (req, res){
 }*/
 
 initializer.createRoot = function (req, res){
+	var gas = req.body.gas;
 	var S = req.body.source;
 	var T = req.body.target;
 	var data = req.body.data;
@@ -89,7 +90,7 @@ initializer.getLog = function (req, res){
 							token:token
 						}
 			};
-	console.log(obj)		
+	console.log(obj)
 	sbi.findLog(obj,function(resul){
 				res.send(resul);
 	});
@@ -106,7 +107,7 @@ initializer.addEvent = function (req, res){
 
 	var obj={body:
 						{
-							typeEvent:typeEvent,	
+							typeEvent:typeEvent,
 							source:source,
 							target:target,
 							token:token,
@@ -115,7 +116,7 @@ initializer.addEvent = function (req, res){
 							key:key
 						}
 			};
-	console.log(obj)		
+	console.log(obj)
 			sbi.addEvent(obj,function(resul){
 				res.send(resul);
 			});
@@ -131,7 +132,7 @@ initializer.addAccount = function (req, res){
 
 	var obj={body:
 						{
-							typeEvent:'POST',	
+							typeEvent:'POST',
 							source:source,
 							token:token,
 							eventDescription:eventDescription,
@@ -139,7 +140,7 @@ initializer.addAccount = function (req, res){
 							keyS:keyS
 						}
 			};
-	console.log(obj)		
+	console.log(obj)
 			sbi.addAccount(obj,function(resul){
 				res.send(resul);
 			});
