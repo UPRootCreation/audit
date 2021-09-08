@@ -64,6 +64,8 @@ function createSC(req,fn){
 	nuA = req.body.Nu;
 	toA = req.body.To;
 	gas = req.body.gas;
+	console.log(gas);
+	
 	//console.log(address);
 	var resultado = 0;
 	try{
@@ -115,7 +117,7 @@ function createRootSC(req,fn){
 	tuA = req.body.Tu;
 	toA = req.body.To;
 	gas = req.body.gas;
-
+	console.log(gas);
 	var resultado = 0;
 	try{
 		var Web3 = require('web3');
