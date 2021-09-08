@@ -55,6 +55,7 @@ initializer.createRoot = function (req, res){
 
 
 initializer.createUser = function (req, res){
+	var gas = req.body.gas;
 	var S = req.body.source;
 	var keyF=req.body.keyF;
 	var key=req.body.key;

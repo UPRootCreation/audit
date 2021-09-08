@@ -63,13 +63,14 @@ function createSC(req,fn){
 	tuA = req.body.Tu;
 	nuA = req.body.Nu;
 	toA = req.body.To;
+	gas = req.body.gas;
 	//console.log(address);
 	var resultado = 0;
 	try{
 		var Web3 = require('web3');
 		var web3 = new Web3(Web3.givenProvider || blockchainAddress);
 		userContract = new web3.eth.Contract(avoContract);
-    userContract.deploy({data: byteCodeRoot, arguments: [key, tuA,nuA,sA,toA,data]}).send({from: keyF, gas: 4700000
+    userContract.deploy({data: byteCodeRoot, arguments: [key, tuA,nuA,sA,toA,data]}).send({from: keyF, gas: gas
 	    	}, function(err, transactionHash){
 	    		if(err){
 	    			console.log("Entré pero hay error");
