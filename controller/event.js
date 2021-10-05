@@ -83,9 +83,9 @@ initializer.createUser = function (req, res){
 
 
 initializer.getLog = function (req, res){
-	var Atr = req.body.Atr;
-	var Asc = req.body.Asc;
-	var token=req.body.token;
+	var Atr = req.query.Atr;
+	var Asc = req.query.Asc;
+	var token=req.query.token;
 	var obj={body:
 						{
 							Atr:Atr,
